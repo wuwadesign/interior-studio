@@ -1,0 +1,117 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { projects } from '@/lib/projects'
+
+export const metadata = {
+  title: 'Projects — Wuwa Design Studio',
+  description: 'Selected interior design projects across Malaysia and Southeast Asia.',
+}
+
+export default function ProjectsPage() {
+  return (
+    <div className="pt-24 md:pt-28">
+      {/* Page header */}
+      <div className="px-6 md:px-16 max-w-7xl mx-auto py-12 border-b border-stone/20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-3">
+              Our work
+            </p>
+            <h1 className="font-display text-5xl md:text-6xl font-light">Projects</h1>
+          </div>
+          <p className="font-body text-sm text-muted max-w-sm leading-relaxed">
+            {projects.length} projects completed across residential and commercial sectors since 2016.
+          </p>
+        </div>
+      </div>
+
+      {/* Projects grid - alternating sizes */}
+      <div className="px-6 md:px-16 max-w-7xl mx-auto py-16">
+        {/* First row — 1 large + 1 medium */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          {projects[0] && (
+            <ProjectCard project={projects[0]} size="large" index={1} />
+          )}
+          {projects[1] && (
+            <ProjectCard project={projects[1]} size="medium" index={2} />
+          )}
+        </div>
+
+        {/* Second row — full width */}
+        {projects[2] && (
+          <div className="mb-4">
+            <ProjectCard project={projects[2]} size="wide" index={3} />
+          </div>
+        )}
+
+        {/* Third row — 3 equal */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          {projects.slice(3, 6).map((project, i) => (
+            <ProjectCard key={project.id} project={project} size="small" index={i + 4} />
+          ))}
+        </div>
+
+        {/* Remaining projects */}
+        {projects.length > 6 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {projects.slice(6).map((project, i) => (
+              <ProjectCard key={project.id} project={project} size="medium" index={i + 7} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ProjectCard({
+  project,
+  size,
+  index,
+}: {
+  project: (typeof projects)[0]
+  size: 'large' | 'medium' | 'small' | 'wide'
+  index: number
+}) {
+  const aspectMap = {
+    large: 'aspect-[3/4]',
+    medium: 'aspect-[4/3]',
+    small: 'aspect-square',
+    wide: 'aspect-[16/7]',
+  }
+
+  return (
+    <Link href={`/projects/${project.id}`} className="group block">
+      <div className={`project-card relative overflow-hidden ${aspectMap[size]}`}>
+        <Image
+          src={project.coverImage}
+          alt={project.title}
+          fill
+          className="object-cover"
+        />
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-all duration-700" />
+
+        {/* Index number */}
+        <span className="absolute top-4 left-4 font-display text-xs text-cream/0 group-hover:text-cream/60 transition-colors duration-500 italic">
+          {String(index).padStart(2, '0')}
+        </span>
+      </div>
+
+      {/* Card info below image */}
+      <div className="pt-4 pb-2 border-b border-stone/20 flex justify-between items-end">
+        <div>
+          <h2 className="font-display text-xl md:text-2xl font-light group-hover:text-accent transition-colors duration-300">
+            {project.title}
+          </h2>
+          <p className="font-body text-xs text-muted mt-1">
+            {project.location}
+          </p>
+        </div>
+        <p className="font-body text-xs tracking-widest text-muted/70">
+          {project.year}
+        </p>
+      </div>
+    </Link>
+  )
+}
