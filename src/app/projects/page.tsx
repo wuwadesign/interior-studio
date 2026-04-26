@@ -25,38 +25,11 @@ export default function ProjectsPage() {
 
       {/* Projects grid - alternating sizes */}
       <div className="px-6 md:px-16 max-w-7xl mx-auto py-16">
-        {/* First row — 1 large + 1 medium */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          {projects[0] && (
-            <ProjectCard project={projects[0]} size="large" index={1} />
-          )}
-          {projects[1] && (
-            <ProjectCard project={projects[1]} size="medium" index={2} />
-          )}
-        </div>
-
-        {/* Second row — full width */}
-        {projects[2] && (
-          <div className="mb-4">
-            <ProjectCard project={projects[2]} size="wide" index={3} />
-          </div>
-        )}
-
-        {/* Third row — 3 equal */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          {projects.slice(3, 6).map((project, i) => (
-            <ProjectCard key={project.id} project={project} size="small" index={i + 4} />
+        <div className="grid grid-cols-1 gap-8">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} size="wide" index={i + 1} />
           ))}
         </div>
-
-        {/* Remaining projects */}
-        {projects.length > 6 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {projects.slice(6).map((project, i) => (
-              <ProjectCard key={project.id} project={project} size="medium" index={i + 7} />
-            ))}
-          </div>
-        )}
       </div>
     </div>
   )
@@ -75,7 +48,7 @@ function ProjectCard({
     large: 'aspect-[3/4]',
     medium: 'aspect-[4/3]',
     small: 'aspect-square',
-    wide: 'aspect-[16/7]',
+    wide: 'aspect-[16/9]',
   }
 
   return (

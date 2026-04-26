@@ -21,6 +21,15 @@ module.exports = {
       letterSpacing: {
         widest2: '0.3em',
       },
+      animation: {
+        conveyor: 'conveyor 30s linear infinite',
+      },
+      keyframes: {
+        conveyor: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
   plugins: [],

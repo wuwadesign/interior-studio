@@ -1,40 +1,75 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { projects } from '@/lib/projects'
+import { useState, useEffect } from 'react'
 
 export default function HomePage() {
-  const featured = projects.slice(0, 3)
+  const carouselImages = [
+    '/images/thevale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
+    '/images/thevale/Wuwa_The Vale_Deliverables_260423_07449-10.jpg',
+    '/images/thevale/Wuwa_The Vale_Deliverables_260423_07619-14.jpg',
+    '/images/elmina green3/LIVING-7.jpg',
+    '/images/elmina green3/LIVING-5.jpg',
+    // add more images here
+  ]
 
+  const heroImages = [
+    '/images/thevale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
+    '/images/thevale/Wuwa_The Vale_Deliverables_260423_07629-15.jpg',
+    '/images/elmina green3/LIVING-9.jpg',
+    // add more hero images here
+  ]
+
+  const [current, setCurrent] = useState(0)
+  const [heroIndex, setHeroIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % carouselImages.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [carouselImages.length])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [heroImages.length])
   return (
     <>
       {/* Hero */}
       <section className="relative h-screen overflow-hidden">
-        <Image
-          src="/images/Elmina Green3/LIVING-9.jpg"
-          alt="Interior design hero"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Overlay */}
+        {heroImages.map((img, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ opacity: i === heroIndex ? 1 : 0 }}
+          >
+            <Image
+              src={img}
+              alt={`Hero image ${i + 1}`}
+              fill
+              priority={i === 0}
+              className="object-cover"
+            />
+          </div>
+        ))}
         <div className="absolute inset-0 bg-dark/30" />
-
-        {/* Hero text */}
         <div className="absolute bottom-16 left-6 right-6 md:left-[max(4rem,calc(50vw-42rem))] md:right-auto">
           <p className="font-body text-xs tracking-widest2 uppercase text-cream/70 mb-6 line-decoration">
             Interior Design Studio
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-cream leading-[1.05] max-w-2xl" style={{ fontFamily: 'var(--font-outfit)', fontWeight: 300 }}>
             Where space<br />
-            <span style={{ fontFamily: 'var(--font-cormorant)', fontStyle: 'italic', fontWeight: 300 }}>meets intention</span>
+            <span style={{ fontFamily: 'var(--font-cormorant)', fontStyle: 'italic', fontWeight: 300 }}>meets intentions</span>
           </h1>
         </div>
-
-        {/* Scroll indicator */}
         <div className="absolute bottom-16 right-6 md:right-16 flex flex-col items-center gap-3">
           <div className="w-px h-16 bg-cream/40 animate-pulse" />
-          <span className="font-body text-xs tracking-widest text-cream/50 uppercase"
-            style={{ writingMode: 'vertical-rl' }}>
+          <span className="font-body text-xs tracking-widest text-cream/50 uppercase" style={{ writingMode: 'vertical-rl' }}>
             Scroll
           </span>
         </div>
@@ -60,19 +95,18 @@ export default function HomePage() {
             <p className="font-body text-sm text-muted leading-relaxed">
               We provide space planning, design conceptualisation and construction - translating ideas into thoughtfully built spaces, shaped by how people use and experience them over time.
             </p>
-            
           </div>
         </div>
       </section>
 
-      {/* Featured projects */}
-      <section className="px-6 md:px-16 pb-28 max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-12">
+      {/* Featured projects — Carousel */}
+      <section className="pb-28">
+        <div className="px-6 md:px-16 max-w-7xl mx-auto flex justify-between items-end mb-12">
           <div>
             <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-3">
               Selected work
             </p>
-            <h2 className="font-display text-3xl font-light">Recent Projects</h2>
+            <h2 className="font-display text-3xl font-light">Explore Projects</h2>
           </div>
           <Link
             href="/projects"
@@ -83,58 +117,50 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {/* Large left card */}
-          <Link
-            href={`/projects/${featured[0].id}`}
-            className="project-card md:col-span-7 group relative overflow-hidden aspect-[4/3]"
-          >
-            <Image
-              src={featured[0].coverImage}
-              alt={featured[0].title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/30 transition-all duration-500" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-              <div className="bg-cream/95 backdrop-blur-sm p-4">
-                <p className="font-body text-xs tracking-widest text-muted uppercase mb-1">
-                  {featured[0].location} — {featured[0].year}
-                </p>
-                <h3 className="font-display text-2xl font-light">{featured[0].title}</h3>
-              </div>
+        {/* Carousel */}
+        <div className="relative w-full aspect-[4/3] max-w-3xl mx-auto overflow-hidden">
+          {carouselImages.map((img, i) => (
+            <div
+              key={i}
+              className="absolute inset-0 transition-opacity duration-1000"
+              style={{ opacity: i === current ? 1 : 0 }}
+            >
+              <Image
+                src={img}
+                alt={`Featured work ${i + 1}`}
+                fill
+                className="object-cover"
+              />
             </div>
-          </Link>
+          ))}
 
-          {/* Right column — 2 stacked */}
-          <div className="md:col-span-5 flex flex-col gap-4">
-            {[featured[1], featured[2]].map((project) => (
-              <Link
-                key={project.id}
-                href={`/projects/${project.id}`}
-                className="project-card group relative overflow-hidden aspect-[3/2]"
-              >
-                <Image
-                  src={project.coverImage}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/30 transition-all duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="bg-cream/95 backdrop-blur-sm p-3">
-                    <p className="font-body text-xs tracking-widest text-muted uppercase mb-0.5">
-                      {project.location}
-                    </p>
-                    <h3 className="font-display text-xl font-light">{project.title}</h3>
-                  </div>
-                </div>
-              </Link>
+          {/* Dot indicators */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+            {carouselImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === current ? 'bg-cream w-4' : 'bg-cream/40'}`}
+              />
             ))}
           </div>
+
+          {/* Prev / Next */}
+          <button
+            onClick={() => setCurrent((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-cream/70 hover:text-cream text-2xl px-3 py-2"
+          >
+            ←
+          </button>
+          <button
+            onClick={() => setCurrent((prev) => (prev + 1) % carouselImages.length)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-cream/70 hover:text-cream text-2xl px-3 py-2"
+          >
+            →
+          </button>
         </div>
 
-        <div className="mt-8 flex md:hidden">
+        <div className="mt-8 flex md:hidden px-6">
           <Link
             href="/projects"
             className="font-body text-xs tracking-widest2 uppercase text-muted hover:text-accent transition-colors duration-300 inline-flex items-center gap-3"
@@ -155,7 +181,7 @@ export default function HomePage() {
             {[
               {
                 title: 'Residential',
-                desc: 'Private homes, apartments, and penthouses crafted around the people who live in them.',
+                desc: 'Private homes, apartments, and penthouses crafted around the people who will live in them.',
               },
               {
                 title: 'Commercial',
@@ -163,7 +189,7 @@ export default function HomePage() {
               },
               {
                 title: 'Renovation',
-                desc: 'Transforming existing spaces with respect for their history and ambition for their future.',
+                desc: 'Transforming existing spaces with new intentions.',
               },
             ].map((s) => (
               <div key={s.title} className="border-t border-cream/10 pt-8">
@@ -174,11 +200,11 @@ export default function HomePage() {
           </div>
           <div className="mt-14">
             <Link
-              href="/services"
+              href="/projects"
               className="inline-flex items-center gap-4 font-body text-xs tracking-widest2 uppercase text-stone hover:text-cream transition-colors duration-300"
             >
               <span className="w-8 h-px bg-current" />
-              Explore our services
+              Explore our completed projects
             </Link>
           </div>
         </div>
