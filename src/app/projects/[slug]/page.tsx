@@ -63,7 +63,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <div className="md:px-16 max-w-7xl mx-auto pb-20">
         {/* All images — 2 per row */}
         {project.images.length > 0 && (
-          <div className={`grid gap-8 px-16 ${project.id === 'thongbowlioi' || project.id === 'officeconcept' || project.id === 'mapleresidence' ? 'grid-cols-1' : 'grid-cols-2'}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {project.images.map((img, i) => (
               <div key={i}>
                 <Image
