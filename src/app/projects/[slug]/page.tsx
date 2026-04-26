@@ -60,7 +60,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </div>
 
       {/* Image gallery */}
-      <div className="px-6 md:px-16 max-w-7xl mx-auto pb-20">
+      <div className="md:px-16 max-w-7xl mx-auto pb-20">
         {/* All images — 2 per row */}
         {project.images.length > 0 && (
           <div className={`grid gap-8 px-16 ${project.id === 'thongbowlioi' || project.id === 'officeconcept' || project.id === 'mapleresidence' ? 'grid-cols-1' : 'grid-cols-2'}`}>
@@ -69,9 +69,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <Image
   src={img}
   alt={`${project.title} — view ${i + 1}`}
-  width={600}
-  height={800}
-  className={`h-auto ${project.id === 'thongbowlioi' || project.id === 'officeconcept' || project.id === 'mapleresidence' ? 'w-1/2 mx-auto' : 'w-full'}`}
+  width={1200}
+  height={1600}
+  className="w-full h-auto"
 />
               </div>
             ))}
