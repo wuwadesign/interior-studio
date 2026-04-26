@@ -25,7 +25,7 @@ export default function ProjectsPage() {
 
       {/* Projects grid - alternating sizes */}
       <div className="px-6 md:px-16 max-w-7xl mx-auto py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} size="wide" index={i + 1} />
           ))}
