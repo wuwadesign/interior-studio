@@ -24,7 +24,8 @@ export default function ContactPage() {
             <p className="font-body text-sm text-dark leading-relaxed">
               Bukit Puchong<br />
               Selangor<br />
-              Malaysia
+              Malaysia<br />
+              (By Appointment Only)
             </p>
           </div>
           <div>
@@ -37,10 +38,12 @@ export default function ContactPage() {
                 wuwadesign@gmail.com
               </a>
               <a
-                href="tel:+60312345678"
+                href="https://wa.me/60175002582"
+                target="blank"
+                rel="noopener noreferrer"
                 className="font-body text-sm text-dark hover:text-accent transition-colors duration-300"
               >
-                +6017 5002582
+                +6017 5002582 (WhatsApp)
               </a>
             </div>
           </div>
@@ -61,7 +64,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="font-body text-sm text-dark hover:text-accent transition-colors duration-300"
               >
-                REDNOTE   
+                RedNote 
               </a>
             </div>
           </div>
@@ -69,7 +72,7 @@ export default function ContactPage() {
             <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-5">Studio hours</p>
             <p className="font-body text-sm text-muted leading-relaxed">
               Monday – Friday<br />
-              9:00 am – 6:00 pm MYT
+              9:00 am – 6:00 pm 
             </p>
           </div>
         </div>
@@ -116,32 +119,48 @@ function ContactForm() {
 
       <div className="flex flex-col gap-2">
         <label className="font-body text-xs tracking-widest uppercase text-muted">
-          Email
+          Whatsapp (preferred) or Email
         </label>
         <input
           type="email"
           name="email"
           className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark placeholder:text-muted/40 focus:outline-none focus:border-dark transition-colors duration-300"
-          placeholder="your@email.com"
+          placeholder="+6012 3456789 or your@email.com"
         />
       </div>
 
-      <div className="flex flex-col gap-2">
+<div className="flex flex-col gap-2">
         <label className="font-body text-xs tracking-widest uppercase text-muted">
           Project type
         </label>
-        <select
-          name="projectType"
-          className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark focus:outline-none focus:border-dark transition-colors duration-300 appearance-none"
-        >
-          <option value="" disabled>Select one</option>
-          <option value="residential">Residential</option>
-          <option value="commercial">Commercial</option>
-          <option value="renovation">Renovation</option>
-          <option value="consultation">Consultation only</option>
-          <option value="other">Other</option>
-        </select>
+        <div className="relative">
+          <select
+            name="projectType"
+            className="w-full border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark focus:outline-none focus:border-dark transition-colors duration-300 appearance-none cursor-pointer"
+          >
+            <option value="" disabled>Select one</option>
+            <option value="residential">Residential (condo)</option>
+            <option value="residential">Residential (Terrace)</option>
+            <option value="residential">Residential (Semi-D)</option>
+            <option value="residential">Residential (Bungalow)</option>
+            <option value="commercial">Commercial</option>
+            <option value="renovation">Renovation</option>
+            <option value="consultation">Consultation only</option>
+            <option value="other">Other</option>
+          </select>
+          <svg
+            className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted"
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
+            <path d="M2 5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
       </div>
+
+      
 
       <div className="flex flex-col gap-2">
         <label className="font-body text-xs tracking-widest uppercase text-muted">
@@ -151,7 +170,7 @@ function ContactForm() {
           name="message"
           rows={5}
           className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark placeholder:text-muted/40 focus:outline-none focus:border-dark transition-colors duration-300 resize-none"
-          placeholder="Location, size, timeline, budget range, what you&apos;re hoping to create..."
+          placeholder="Location/Name of residence, size (sqft), timeline, budget range, what you&apos;re hoping to create..."
         />
       </div>
 

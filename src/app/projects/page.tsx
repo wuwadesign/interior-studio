@@ -17,11 +17,9 @@ export default function ProjectsPage() {
             <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-3">
               Our work
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-light">Projects</h1>
+            <h1 className="font-body text-3xl md:text-4xl font-light">PROJECTS</h1>
           </div>
-          <p className="font-body text-sm text-muted max-w-sm leading-relaxed">
-            {projects.length} projects completed across residential and commercial sectors since 2016.
-          </p>
+          
         </div>
       </div>
 
@@ -108,9 +106,7 @@ function ProjectCard({
             {project.location}
           </p>
         </div>
-        <p className="font-body text-xs tracking-widest text-muted/70">
-          {project.year}
-        </p>
+        
       </div>
     </Link>
   )

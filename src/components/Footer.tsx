@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-3xl font-light italic mb-4">Wuwa Design Studio</h3>
+            <h3 className="font-body text-3xl uppercase tracking-widest mb-4 leading-none">Wuwa Design Studio</h3>
             <p className="font-body text-sm text-stone leading-relaxed max-w-xs">
-              Deeply considered interiors for those who understand that beauty takes time.
+              
             </p>
           </div>
 
@@ -19,7 +19,6 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {[
                 { href: '/projects', label: 'Projects' },
-                { href: '/about', label: 'About' },
                 { href: '/services', label: 'Services' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
@@ -46,10 +45,12 @@ export default function Footer() {
                 wuwadesign@gmail.com
               </a>
               <a
-                href="tel:+60312345678"
+                href="https://wa.me/60175002582"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-body text-sm text-cream/70 hover:text-cream transition-colors duration-300"
               >
-                +6017 5002582
+                +6017 5002582 (WhatsApp)
               </a>
               <p className="font-body text-sm text-cream/50 mt-2">
                 Kuala Lumpur, Malaysia
@@ -65,12 +66,12 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="https://pinterest.com"
+                href="https://xhslink.com/m/7cYMsTqWWl7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-xs tracking-widest uppercase text-stone hover:text-cream transition-colors duration-300"
               >
-                Pinterest
+                Rednote
               </a>
             </div>
           </div>
@@ -79,10 +80,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-cream/10 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="font-body text-xs text-stone/50">
-            © 2024 Wuwa Design Studio. All rights reserved.
-          </p>
-          <p className="font-body text-xs text-stone/30 italic font-display">
-            Crafting interiors since 2016
+            © 2026 Wuwa Design Studio. (SA0585225-v) All rights reserved.
           </p>
         </div>
       </div>

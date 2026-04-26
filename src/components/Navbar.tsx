@@ -22,7 +22,6 @@ export default function Navbar() {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/projects', label: 'Projects' },
-    { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/contact', label: 'Contact' },
   ]
@@ -30,17 +29,15 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-cream/95 backdrop-blur-sm border-b border-stone/20' : 'bg-transparent'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-cream/95 backdrop-blur-sm border-b border-stone/20"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 h-16 md:h-20 flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-xl md:text-2xl font-light tracking-wider text-dark hover:text-accent transition-colors duration-300"
+            className="font-body text-xl md:text-2xl tracking-wider text-dark hover:text-accent transition-colors duration-300"
           >
-            STUDIO <span className="italic">Atelier</span>
+            WUWA DESIGN STUDIO <span className="italic"></span>
           </Link>
 
           {/* Desktop nav */}
@@ -114,7 +111,7 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="mt-16 font-body text-xs tracking-widest text-muted uppercase">
-          © 2024 Wuwa Design Studio
+          © 2026 Wuwa Design Studio
         </div>
       </div>
     </>

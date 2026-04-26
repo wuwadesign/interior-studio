@@ -2,75 +2,94 @@ export interface Project {
   id: string
   title: string
   location: string
-  year: string
   category: string
   coverImage: string
   images: string[]
-  description: string
+  description?: string
   details: {
     scope: string
     area: string
-    status: string
   }
 }
 
 export const projects: Project[] = [
   {
-    id: 'the-meridian',
-    title: 'Lagenda Residence',
-    location: 'Puchong',
-    year: '2023',
+    id: 'puchonglegenda',
+    title: 'Legenda Residence',
+    location: 'puchong',
     category: 'Residential',
-    coverImage: '/images/DSCF6015.jpg',
+    coverImage: '/images/Legenda/legenda-bedroom2.jpg',
     images: [
-      '/images/DSCF6013.jpg',
-      '/images/DSCF6008.jpg',
-      '/images/DSCF7002.jpg',
-      '/images/DSCF7017.jpg',
+      '/images/Legenda/DSCF7008.jpg',
+      '/images/Legenda/legenda-bedroom.jpg',
+      '/images/Legenda/DSCF8004.jpg',
+      '/images/Legenda/DSCF8002.jpg',
+      '/images/Legenda/legenda-island.jpg',
+      '/images/Legenda/legenda-tvwall.jpg',
+      '/images/Legenda/legenda-dressing.jpg',
+      '/images/Legenda/legenda-display.jpg',
     ],
-    description: 'A calm, minimal home defined by warm beige and earthy tones, designed to feel both inviting and timeless. Soft curves around the house are subtly introduced in carpentry and ceiling details, adding organic flow to the space. Ambient lighting is seamlessly integrated within the built-ins, where minimalism meets warmth and comfort.',
     details: {
       scope: 'Full interior design',
       area: '2000 sqft',
-      status: 'Completed 2023',
     },
   },
   {
-    id: 'villa-selayang',
-    title: 'Villa Selayang',
-    location: 'Selangor',
-    year: '2024',
+    id: 'elminagreen',
+    title: 'Mr Z Residence',
+    location: 'elmina green, shah alam',
     category: 'Residential',
-    coverImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85',
+    coverImage: '/images/Elmina Green3/LIVING-4.jpg',
     images: [
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=85',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=85',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=85',
+      '/images/Elmina Green3/LIVING-3.jpg',
+      '/images/Elmina Green3/LIVING-2.jpg',
+      '/images/Elmina Green3/LIVING-7.jpg',
+      '/images/Elmina Green3/LIVING-8.jpg',
+      '/images/Elmina Green3/LIVING-10.jpg',
+      '/images/Elmina Green3/BEDROOM-3.jpg',
+      '/images/Elmina Green3/BEDROOM-2.jpg',
+      '/images/Elmina Green3/BEDROOM-4.jpg',
+      '/images/Elmina Green3/MASTERBED-2.jpg',
+      '/images/Elmina Green3/MASTERBED-5.jpg',
+      '/images/Elmina Green3/MASTERBED-3.jpg',
+      '/images/Elmina Green3/MASTERBED-4.jpg',
+      '/images/Elmina Green3/KITCHEN-2.jpg',
+      '/images/Elmina Green3/KITCHEN-3.jpg',
     ],
-    description: 'Set within a mature garden, this family home draws its language from the land itself — earthy pigments, raw teak, and locally sourced stone. The interiors blur the threshold between inside and outside, letting nature become the dominant material.',
     details: {
-      scope: 'Interior design, landscape coordination',
-      area: '6,800 sqft',
-      status: 'Completed 2024',
+      scope: 'concept to completion',
+      area: '2,200 sqft',
     },
   },
   {
-    id: 'obsidian-loft',
-    title: 'Obsidian Loft',
-    location: 'Bangsar, KL',
-    year: '2023',
+    id: 'damansararesidence',
+    title: 'The Vale',
+    location: 'damansara',
     category: 'Residential',
-    coverImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85',
+    coverImage: '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
     images: [
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=85',
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=85',
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07434-8.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07499-11.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07254-1.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07294-2.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07394-6.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07354-4.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07384-5.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07444-9.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07449-10.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07629-15.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07644-16.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07619-14.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07614-13.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07714-18.jpg',
+      '/images/TheVale/Wuwa_The Vale_Deliverables_260423_07679-17.jpg',
+
     ],
     description: 'A duplex for a couple who collects art. The brief was clear: the space must recede so the art can speak. We designed a restrained backdrop of blackened steel, raw concrete, and aged leather — a living gallery that breathes.',
     details: {
       scope: 'Concept to completion',
-      area: '2,900 sqft',
-      status: 'Completed 2023',
+      area: '2,000 sqft',
     },
   },
   {

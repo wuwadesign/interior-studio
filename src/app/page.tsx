@@ -10,7 +10,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative h-screen overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=90"
+          src="/images/Elmina Green3/LIVING-9.jpg"
           alt="Interior design hero"
           fill
           priority
@@ -20,13 +20,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-dark/30" />
 
         {/* Hero text */}
-        <div className="absolute bottom-16 left-6 md:left-16 right-6 md:right-auto">
+        <div className="absolute bottom-16 left-6 right-6 md:left-[max(4rem,calc(50vw-42rem))] md:right-auto">
           <p className="font-body text-xs tracking-widest2 uppercase text-cream/70 mb-6 line-decoration">
             Interior Design Studio
           </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-cream leading-[1.05] max-w-2xl">
-            Spaces that<br />
-            <span className="italic">endure</span>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-cream leading-[1.05] max-w-2xl" style={{ fontFamily: 'var(--font-outfit)', fontWeight: 300 }}>
+            Where space<br />
+            <span style={{ fontFamily: 'var(--font-cormorant)', fontStyle: 'italic', fontWeight: 300 }}>meets intention</span>
           </h1>
         </div>
 
@@ -55,18 +55,12 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col gap-6">
             <p className="font-body text-sm text-muted leading-relaxed">
-              Wuwa Design Studio is a Kuala Lumpur–based interior design practice working across residential and commercial projects throughout Malaysia and Southeast Asia.
+              Wuwa Design Studio is a Kuala Lumpur–based interior design practice working across residential and commercial projects throughout Malaysia.
             </p>
             <p className="font-body text-sm text-muted leading-relaxed">
-              We believe in slow design — a process that takes time to understand how people live, what they value, and how a space can quietly serve them for decades.
+              We provide space planning, design conceptualisation and construction - translating ideas into thoughtfully built spaces, shaped by how people use and experience them over time.
             </p>
-            <Link
-              href="/about"
-              className="font-body text-xs tracking-widest2 uppercase text-accent hover:text-dark transition-colors duration-300 mt-4 inline-flex items-center gap-3"
-            >
-              <span className="w-8 h-px bg-current" />
-              Our story
-            </Link>
+            
           </div>
         </div>
       </section>
@@ -130,7 +124,7 @@ export default function HomePage() {
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="bg-cream/95 backdrop-blur-sm p-3">
                     <p className="font-body text-xs tracking-widest text-muted uppercase mb-0.5">
-                      {project.location} — {project.year}
+                      {project.location}
                     </p>
                     <h3 className="font-display text-xl font-light">{project.title}</h3>
                   </div>

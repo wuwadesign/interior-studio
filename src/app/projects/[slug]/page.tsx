@@ -12,7 +12,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!project) return {}
   return {
     title: `${project.title} — Wuwa Design Studio`,
-    description: project.description,
   }
 }
 
@@ -25,16 +24,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <article className="pt-20 md:pt-24">
-      {/* Hero image — full bleed */}
-      <div className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        <Image
-          src={project.images[0]}
-          alt={project.title}
-          fill
-          priority
-          className="object-cover"
-        />
-      </div>
+      
 
       {/* Project header */}
       <div className="px-6 md:px-16 max-w-7xl mx-auto py-14 md:py-20">
@@ -44,11 +34,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-5 line-decoration">
               {project.category}
             </p>
-            <h1 className="font-display text-5xl md:text-7xl font-light leading-[1.05] mb-6">
+            <h1 className="font-outfit text-4xl md:text-5xl font-light leading-[1.05] mb-6">
               {project.title}
             </h1>
-            <p className="font-body text-sm text-muted">
-              {project.location} — {project.year}
+            <p className="font-outfit text-sm text-muted">
+              {project.location}
             </p>
           </div>
 
@@ -63,61 +53,28 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <p className="font-body text-xs tracking-widest uppercase text-muted/60 mb-1">Area</p>
                 <p className="font-body text-sm text-dark">{project.details.area}</p>
               </div>
-              <div>
-                <p className="font-body text-xs tracking-widest uppercase text-muted/60 mb-1">Status</p>
-                <p className="font-body text-sm text-dark">{project.details.status}</p>
-              </div>
+              
             </div>
           </div>
-        </div>
-
-        {/* Description */}
-        <div className="mt-14 md:mt-20 max-w-3xl">
-          <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed text-dark/80">
-            {project.description}
-          </p>
         </div>
       </div>
 
       {/* Image gallery */}
       <div className="px-6 md:px-16 max-w-7xl mx-auto pb-20">
-        {/* First image — full width */}
-        {project.images[1] && (
-          <div className="relative w-full aspect-[16/9] overflow-hidden mb-4">
-            <Image
-              src={project.images[1]}
-              alt={`${project.title} — view 2`}
-              fill
-              className="object-cover"
-            />
-          </div>
-        )}
-
-        {/* Two images side by side */}
-        {project.images.length >= 4 && (
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            {project.images.slice(2, 4).map((img, i) => (
-              <div key={i} className="relative aspect-[3/4] overflow-hidden">
+        {/* All images — 2 per row */}
+        {project.images.length > 0 && (
+          <div className="grid grid-cols-2 gap-8 px-16">
+            {project.images.map((img, i) => (
+              <div key={i}>
                 <Image
                   src={img}
-                  alt={`${project.title} — view ${i + 3}`}
-                  fill
-                  className="object-cover"
+                  alt={`${project.title} — view ${i + 1}`}
+                  width={600}
+                  height={800}
+                  className="w-full h-auto"
                 />
               </div>
             ))}
-          </div>
-        )}
-
-        {/* Three or single image */}
-        {project.images.length === 3 && (
-          <div className="relative w-full aspect-[16/9] overflow-hidden">
-            <Image
-              src={project.images[2]}
-              alt={`${project.title} — view 3`}
-              fill
-              className="object-cover"
-            />
           </div>
         )}
       </div>
@@ -150,7 +107,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <h2 className="font-display text-4xl md:text-6xl font-light italic">
             {nextProject.title}
           </h2>
-          <p className="font-body text-xs text-cream/50 mt-2">{nextProject.location}</p>
+          <p className="font-outfit text-xs text-cream/50 mt-2">{nextProject.location}</p>
         </div>
       </Link>
     </article>
