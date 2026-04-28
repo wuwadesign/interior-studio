@@ -1,90 +1,59 @@
-export const metadata = {
-  title: 'Contact — Wuwa Design Studio',
-  description: 'Get in touch with Wuwa Design Studio to begin your interior design project.',
-}
+import Image from "next/image"
 
 export default function ContactPage() {
   return (
-    <div className="pt-20 md:pt-24 min-h-screen">
-      {/* Header */}
-      <div className="px-6 md:px-16 max-w-7xl mx-auto py-16 md:py-20 border-b border-stone/20">
-        <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-4">Reach out</p>
-        <h1 className="font-display text-5xl md:text-7xl font-light leading-tight">
-          Let&apos;s start a<br />
-          <span className="italic">conversation</span>
-        </h1>
+    <div className="pt-24 md:pt-24 min-h-screen">
+      
+
+      {/* Cover image */}
+      <div className="relative w-full h-screen overflow-hidden">
+        <Image
+          src="/images/thevale/Wuwa_The Vale_Deliverables_260423_07629-15.jpg"
+          alt="Wuwa Design Studio interior"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Overlay text */}
+<div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20">
+  <h2 className="font-display text-6xl md:text-8xl font-light text-cream text-center leading-tight pb-60">
+    Get your <span className="italic">free quote</span> today
+  </h2>
+
+  <a
+  href="https://wa.me/60175002582?text=Hi%20Wuwa%20Design%2C%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20project.%0A%0AName%20%3A%20%0AProperty%20Type%20%3A%20%0AProperty%20Size%20%3A%20%0AProperty%20Location%20%3A%20%0ARenovation%20Month%20%3A%20"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="-mt-40 flex items-center gap-3 bg-cream border border-cream rounded-full px-8 py-3 font-body text-xs tracking-widest2 uppercase text-dark hover:bg-transparent hover:text-cream transition-all duration-500"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-6 h-6"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.077a.75.75 0 00.916.948l5.453-1.427A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.953-1.355l-.355-.211-3.664.959.981-3.573-.231-.368A9.725 9.725 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+  Free Quote
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-6 h-4"
+  >
+    <path d="M2 12h26M20 5l8 7-8 7"/>
+  </svg>
+  </a>
+</div>
       </div>
 
-      {/* Contact grid */}
-      <div className="px-6 md:px-16 max-w-7xl mx-auto py-16 grid grid-cols-1 md:grid-cols-2 gap-16">
-        {/* Left — info */}
-        <div className="flex flex-col gap-12">
-          <div>
-            <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-5">Studio</p>
-            <p className="font-body text-sm text-dark leading-relaxed">
-              Bukit Puchong<br />
-              Selangor<br />
-              Malaysia<br />
-              (By Appointment Only)
-            </p>
-          </div>
-          <div>
-            <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-5">Contact</p>
-            <div className="flex flex-col gap-2">
-              <a
-                href="mailto:wuwadesign@gmail.com"
-                className="font-body text-sm text-dark hover:text-accent transition-colors duration-300"
-              >
-                wuwadesign@gmail.com
-              </a>
-              <a
-                href="https://wa.me/60175002582"
-                target="blank"
-                rel="noopener noreferrer"
-                className="font-body text-sm text-dark hover:text-accent transition-colors duration-300"
-              >
-                +6017 5002582 (WhatsApp)
-              </a>
-            </div>
-          </div>
-          <div>
-            <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-5">Follow</p>
-            <div className="flex gap-6">
-              <a
-                href="https://www.instagram.com/wuwadesign/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body text-sm text-dark hover:text-accent transition-colors duration-300"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://xhslink.com/m/7cYMsTqWWl7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body text-sm text-dark hover:text-accent transition-colors duration-300"
-              >
-                RedNote 
-              </a>
-            </div>
-          </div>
-          <div>
-            <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-5">Studio hours</p>
-            <p className="font-body text-sm text-muted leading-relaxed">
-              Monday – Friday<br />
-              9:00 am – 6:00 pm 
-            </p>
-          </div>
-        </div>
-
-        {/* Right — form */}
-        <div>
-          <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-8">
-            Send us a message
-          </p>
-          <ContactForm />
-        </div>
-      </div>
+      
+      
     </div>
   )
 }
@@ -92,98 +61,16 @@ export default function ContactPage() {
 function ContactForm() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col gap-2">
-          <label className="font-body text-xs tracking-widest uppercase text-muted">
-            First name
-          </label>
-          <input
-            type="text"
-            name="firstName"
-            className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark placeholder:text-muted/40 focus:outline-none focus:border-dark transition-colors duration-300"
-            placeholder="Nur"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="font-body text-xs tracking-widest uppercase text-muted">
-            Last name
-          </label>
-          <input
-            type="text"
-            name="lastName"
-            className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark placeholder:text-muted/40 focus:outline-none focus:border-dark transition-colors duration-300"
-            placeholder="Aisyah"
-          />
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <label className="font-body text-xs tracking-widest uppercase text-muted">
-          Whatsapp (preferred) or Email
-        </label>
-        <input
-          type="email"
-          name="email"
-          className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark placeholder:text-muted/40 focus:outline-none focus:border-dark transition-colors duration-300"
-          placeholder="+6012 3456789 or your@email.com"
-        />
-      </div>
-
-<div className="flex flex-col gap-2">
-        <label className="font-body text-xs tracking-widest uppercase text-muted">
-          Project type
-        </label>
-        <div className="relative">
-          <select
-            name="projectType"
-            className="w-full border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark focus:outline-none focus:border-dark transition-colors duration-300 appearance-none cursor-pointer"
-          >
-            <option value="" disabled>Select one</option>
-            <option value="residential">Residential (condo)</option>
-            <option value="residential">Residential (Terrace)</option>
-            <option value="residential">Residential (Semi-D)</option>
-            <option value="residential">Residential (Bungalow)</option>
-            <option value="commercial">Commercial</option>
-            <option value="renovation">Renovation</option>
-            <option value="consultation">Consultation only</option>
-            <option value="other">Other</option>
-          </select>
-          <svg
-            className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted"
-            viewBox="0 0 14 14"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path d="M2 5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-      </div>
+      
+      
 
       
 
-      <div className="flex flex-col gap-2">
-        <label className="font-body text-xs tracking-widest uppercase text-muted">
-          Tell us about your project
-        </label>
-        <textarea
-          name="message"
-          rows={5}
-          className="border-b border-stone/40 bg-transparent py-3 font-body text-sm text-dark placeholder:text-muted/40 focus:outline-none focus:border-dark transition-colors duration-300 resize-none"
-          placeholder="Location/Name of residence, size (sqft), timeline, budget range, what you&apos;re hoping to create..."
-        />
-      </div>
+      
 
-      <button
-        type="button"
-        className="mt-4 self-start border border-dark px-10 py-4 font-body text-xs tracking-widest2 uppercase hover:bg-dark hover:text-cream transition-all duration-500"
-      >
-        Send message
-      </button>
+      
 
-      <p className="font-body text-xs text-muted/50 leading-relaxed">
-        We respond to all enquiries within 2 business days.
-      </p>
+      
     </div>
   )
 }
