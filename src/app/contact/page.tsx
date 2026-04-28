@@ -50,11 +50,8 @@ export default function ContactPage() {
   </svg>
   </a>
 </div>
-      </div>
-
-      
-      
-    </div>
+</div>
+</div>
   )
 }
 
