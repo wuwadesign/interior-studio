@@ -114,7 +114,7 @@ export default function HomePage() {
         rel="noopener noreferrer"
         className="inline-flex items-center self-start gap-2 bg-dark text-cream font-body text-sm tracking-wide px-6 py-3 hover:bg-dark/80 transition-colors"
       >
-        Get a free quote on WhatsApp →
+        Chat With Us on WhatsApp →
       </a>
       <a
         href="#projects"
