@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     id: 'elminagreen',
     title: 'Mr Z Residence',
-    location: 'elmina green, shah alam',
+    location: '4-bedroom landed house, Shah Alam',
     category: 'Residential',
     coverImage: '/images/elmina green3/LIVING-4.jpg',
     images: [
@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     id: 'damansararesidence',
     title: 'The Vale',
-    location: 'damansara',
+    location: '3-bedroom landed house, Damansara',
     category: 'Residential',
     coverImage: '/images/thevale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
     images: [
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     {
     id: 'puchonglegenda',
     title: 'Legenda Residence',
-    location: 'puchong',
+    location: '5-bedroom landed house, Puchong',
     category: 'Residential',
     coverImage: '/images/legenda/legenda-bedroom2.jpg',
     images: [
@@ -89,14 +89,14 @@ export const projects: Project[] = [
       '/images/legenda/legenda-display.jpg',
     ],
     details: {
-      scope: 'Full interior design',
+      scope: 'concept to completion',
       area: '2000 sqft',
     },
   },
   {
     id: 'thongbowlioi',
     title: 'Thongbowl',
-    location: 'ioi damansara',
+    location: 'Beef Noodle Restaurant, IOI Damansara',
     category: 'Commercial',
     coverImage: '/images/thongbowlioi/Enscape_2025-06-28-01-48-07.jpg',
     images: [
@@ -106,14 +106,14 @@ export const projects: Project[] = [
       '/images/thongbowlioi/Enscape_2025-06-28-01-19-39.jpg',
     ],
     details: {
-      scope: 'Design & Build (completed 2025)',
+      scope: 'concept to completion (completed 2025)',
       area: '2,200 sqft',
     },
   },
   {
     id: 'gownrentalshop',
     title: 'Tuilerie Gown',
-    location: 'kuala lumpur',
+    location: 'Gown Rental Shop, Kuala Lumpur',
     category: 'Commercial',
     coverImage: '/images/tuilerie/DSC_7379.jpg',
     images: [
@@ -130,14 +130,14 @@ export const projects: Project[] = [
 
     ],
     details: {
-      scope: 'Design & Build',
+      scope: 'concept to completion',
       area: '1,200 sqft',
     },
   },
   {
     id: 'pjnoodleplace',
     title: 'BiangBiang Noodle Bar',
-    location: 'kuala lumpur',
+    location: 'Noodle Restaurant, Cheras',
     category: 'Commercial',
     coverImage: '/images/biangbiang cheras/DSCF4945.jpg',
     images: [
@@ -155,14 +155,14 @@ export const projects: Project[] = [
       '/images/biangbiang cheras/DSCF5013.jpg',
     ],
     details: {
-      scope: 'Design & Build',
+      scope: 'concept to completion',
       area: '1,800 sqft',
     },
   },
   {
     id: 'officeconcept',
     title: 'Developer Office',
-    location: 'kuala lumpur',
+    location: 'Event Hall + Meeting Room, Kajang',
     category: 'Commercial',
     coverImage: '/images/fairview/entrance.jpg',
     images: [
@@ -181,7 +181,7 @@ export const projects: Project[] = [
   {
     id: 'mapleresidence',
     title: 'Maple Residence',
-    location: 'kuala lumpur',
+    location: '4-bedroom Dual-key, Kuala Lumpur',
     category: 'Residential',
     coverImage: '/images/maple residence/drykitchen2.png',
     images: [
