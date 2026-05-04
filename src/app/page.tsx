@@ -199,11 +199,12 @@ export default function HomePage() {
       </section>
 
       {/* Services strip */}
-<section className="bg-dark text-cream py-24 px-6 md:px-16">
+<section className="py-24 px-6 md:px-16 bg-dark/[0.09]">
   <div className="max-w-7xl mx-auto">
-    <p className="font-body text-xs tracking-widest2 uppercase text-stone mb-12">
+    <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-12">
       What we do
     </p>
+
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
       {[
         {
@@ -219,16 +220,21 @@ export default function HomePage() {
           desc: 'Already own a property that needs refresh? We redesign existing spaces — big or small, to match your needs. We handle demolition, redesign and rebuild.',
         },
       ].map((s) => (
-        <div key={s.title} className="border-t border-cream/10 pt-8">
-          <h3 className="font-display text-2xl font-light italic mb-4">{s.title}</h3>
-          <p className="font-body text-sm text-stone/70 leading-relaxed">{s.desc}</p>
+        <div key={s.title} className="border-t border-dark/10 pt-8">
+          <h3 className="font-display text-2xl font-light italic mb-4 text-dark">
+            {s.title}
+          </h3>
+          <p className="font-body text-sm text-muted leading-relaxed">
+            {s.desc}
+          </p>
         </div>
       ))}
     </div>
+
     <div className="mt-14">
       <Link
         href="/projects"
-        className="inline-flex items-center gap-4 font-body text-xs tracking-widest2 uppercase text-stone hover:text-cream transition-colors duration-300"
+        className="inline-flex items-center gap-4 font-body text-xs tracking-widest2 uppercase text-muted hover:text-dark transition-colors duration-300"
       >
         <span className="w-8 h-px bg-current" />
         Explore our completed projects
@@ -277,7 +283,7 @@ export default function HomePage() {
 </section>
 
       {/* Risk Reversal */}
-<section className="py-24 px-6 md:px-16 bg-dark/[0.03]">
+<section className="py-24 px-6 md:px-16 bg-dark/[0.09]">
   <div className="max-w-7xl mx-auto">
     <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-12">
       Our promise to you
@@ -310,14 +316,16 @@ export default function HomePage() {
   </div>
 </section>
 
+
+
 {/* FAQ */}
 <section className="py-24 px-6 md:px-16">
-  <div className="max-w-7xl mx-auto">
+  <div className="max-w-4xl mx-auto">
     <p className="font-body text-xs tracking-widest2 uppercase text-muted mb-12">
       Frequently asked questions
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+    <div className="flex flex-col divide-y divide-dark/10">
       {[
         {
           q: 'How much does interior design cost?',
@@ -325,34 +333,55 @@ export default function HomePage() {
         },
         {
           q: 'How long does a typical renovation take?',
-          a: 'Most of our residential projects, a standard terrace house for example, takes between 12-20 weeks from design sign-off to handover, depending on scope of work. We\'ll give you a realistic timeline at the start and we will stick to it. ',
+          a: 'Most of our residential projects, a standard terrace house for example, takes between 12–20 weeks from design sign-off to handover, depending on scope of work. We’ll give you a realistic timeline at the start and we will stick to it.',
         },
         {
           q: 'Do I need to manage the contractors myself?',
-          a: 'No. That\'s one of the biggest things we take off your plate. We manage all contractors and site visits throughout the build. You get regular updates without having to chase anyone.',
+          a: 'No. That’s one of the biggest things we take off your plate. We manage all contractors and site visits throughout the build. You get regular updates without having to chase anyone.',
         },
         {
           q: 'How accurate are your 3D designs?',
           a: 'Our visuals are created with real-world execution in mind. What you see is designed to be achievable — not just for presentation, but for actual build.',
         },
         {
-          q: 'What if i don\'t like the initial design concept (moodboard).',
+          q: 'What if I don’t like the initial design concept?',
           a: 'We revise the concept until you are happy — at no extra cost. You will never be pressured to approve something you are unsure about.',
         },
         {
           q: 'Do you only work in Puchong?',
-          a: 'We are based in Puchong but we take on projects across Klang Valley and beyond. Drop us a message and we\'ll let you know if we can serve your area.',
+          a: 'We are based in Puchong but we take on projects across Klang Valley and beyond. Drop us a message and we’ll let you know if we can serve your area.',
         },
-      ].map((item) => (
-        <div key={item.q} className="border-t border-dark/10 pt-6 flex flex-col gap-3">
-          <h3 className="font-display text-xl font-light italic text-dark">
-            {item.q}
-          </h3>
-          <p className="font-body text-sm text-muted leading-relaxed">
-            {item.a}
-          </p>
-        </div>
-      ))}
+      ].map((item, index) => {
+        const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+        const isOpen = openIndex === index
+
+        return (
+          <div key={item.q} className="py-6">
+            <button
+              onClick={() => setOpenIndex(isOpen ? null : index)}
+              className="w-full flex justify-between items-center text-left"
+            >
+              <h3 className="font-display text-xl font-light italic text-dark">
+                {item.q}
+              </h3>
+              <span className="text-dark text-xl">
+                {isOpen ? '−' : '+'}
+              </span>
+            </button>
+
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                isOpen ? 'max-h-40 mt-4' : 'max-h-0'
+              }`}
+            >
+              <p className="font-body text-sm text-muted leading-relaxed">
+                {item.a}
+              </p>
+            </div>
+          </div>
+        )
+      })}
     </div>
   </div>
 </section>
@@ -373,7 +402,7 @@ export default function HomePage() {
       rel="noopener noreferrer"
       className="inline-block bg-dark text-cream px-12 py-4 font-body text-xs tracking-widest2 uppercase hover:bg-dark/80 transition-all duration-500"
     >
-      Get my free quote on WhatsApp →
+      Chat with us on WhatsApp →
     </a>
     <p className="font-body text-xs text-muted">
       No hard sell. We reply within 24 hours.
