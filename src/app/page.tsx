@@ -19,7 +19,11 @@ export default function HomePage() {
     '/images/thevale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
     '/images/thevale/Wuwa_The Vale_Deliverables_260423_07629-15.jpg',
     '/images/elmina green3/LIVING-9.jpg',
-    // add more hero images here
+  ]// add more hero images here
+   const heroAltText = [
+    'Luxury living room interior design Damansara landed home — Wuwa Design Studio Kuala Lumpur',
+    'Open plan dining and living area renovation Damansara — interior design KL by Wuwa',
+    'Modern landed house living room interior design Shah Alam — Wuwa Design Studio',
   ]
 
   const [current, setCurrent] = useState(0)
@@ -50,7 +54,7 @@ export default function HomePage() {
     >
       <Image
         src={img}
-        alt={`Hero image ${i + 1}`}
+        alt={heroAltText[i] ?? `Hero image ${i + 1}`}
         fill
         priority={i === 0}
         className="object-cover"
@@ -104,7 +108,7 @@ export default function HomePage() {
     </h2>
     <div className="flex flex-col gap-6">
       <p className="font-body text-sm text-muted leading-relaxed">
-        We help home owners in Kuala Lumpur turn their property into a home they love — handling everything from space planning and 3D concepts to materials, contractors and final handover.
+        We help home owners in Kuala Lumpur turn their property into a home they love — handling everything from space planning and 3D concepts to materials, contractors and final handover, a full renovation by Wuwa Design Studio.
       </p>
     </div>
      <div className="flex flex-col gap-3">
@@ -349,7 +353,7 @@ export default function HomePage() {
         },
         {
           q: 'Do you only work in Puchong?',
-          a: 'We are based in Puchong but we take on projects across Klang Valley and beyond. Drop us a message and we’ll let you know if we can serve your area.',
+          a: 'We are based in Puchong but we take on interior design and renovation projects across Klang Valley and beyond, residential and commercial. Drop us a message and we’ll let you know if we can serve your area.',
         },
       ].map((item, index) => {
         const [openIndex, setOpenIndex] = useState<number | null>(null)

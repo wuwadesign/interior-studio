@@ -5,7 +5,7 @@ export interface Project {
   category: string
   coverImage: string
   images: string[]
-  description?: string
+  description?: string[]
   details: {
     scope: string
     area: string
@@ -17,6 +17,22 @@ export const projects: Project[] = [
   {
     id: 'elminagreen',
     title: 'Mr Z Residence',
+    altText: [
+    'Modern living room interior design 4-bedroom terrace house Shah Alam — Wuwa Design Studio',
+    'Open plan living and dining room renovation Shah Alam landed home 2200 sqft — Wuwa KL',
+    'Contemporary living room interior design Shah Alam — concept to completion renovation Klang Valley',
+    'Neutral tone living area sofa arrangement Shah Alam terrace house — interior design KL',
+    'Full renovation living room with TV feature wall Shah Alam landed home — Wuwa Design Studio',
+    'Kids bedroom interior design Shah Alam 4-bedroom terrace house — Wuwa Design Studio KL',
+    'Secondary bedroom renovation Shah Alam landed home — full interior design package Klang Valley',
+    'Bright bedroom design with built-in wardrobe Shah Alam terrace — interior renovation KL',
+    'Master bedroom interior design Shah Alam 4-bedroom landed home — Wuwa Design Studio',
+    'Master bedroom with dressing area renovation Shah Alam terrace house — turnkey interior design KL',
+    'Minimalist master bedroom headboard design Shah Alam — concept to handover interior design KL',
+    'Luxury master bedroom ensuite design Shah Alam 4-bed terrace — Wuwa Design Studio Klang Valley',
+    'Modern kitchen cabinet design Shah Alam landed home renovation — interior design Kuala Lumpur',
+    'Wet kitchen renovation with full cabinetry Shah Alam terrace house — Wuwa Design Studio KL',
+    ],
     location: '4-bedroom landed house, Shah Alam',
     category: 'Residential',
     coverImage: '/images/elmina green3/LIVING-4.jpg',
@@ -36,14 +52,37 @@ export const projects: Project[] = [
       '/images/elmina green3/KITCHEN-2.jpg',
       '/images/elmina green3/KITCHEN-3.jpg',
     ],
-    details: {
-      scope: 'concept to completion',
-      area: '2,200 sqft',
-    },
+description: [
+  'Located in Elmina Green 3, Shah Alam, a development by Sime Darby, this home is designed with a warm, minimalistic approach defined by clean lines and a consistent use of wood tones throughout the space.',
+  'One of the key challenges was the relatively low slab and beam levels, which required careful spatial planning.',
+  'Instead of concealing the beams entirely, they were thoughtfully integrated into the design, allowing them to become part of the visual language while maintaining a comfortable ceiling height and spatial openness.',
+],
+  details: {
+    scope: 'concept to completion',
+    area: '2,200 sqft',
+  },
   },
   {
     id: 'damansararesidence',
     title: 'The Vale',
+    altText: [
+      'Contemporary living room interior design Damansara 3-bedroom landed home — Wuwa Design Studio KL',
+      'Scandinavian style dining room renovation Damansara landed house — full interior design Klang Valley',
+      'Feature wall living room design Damansara 3-bed terrace — concept to handover renovation KL',
+      'Open concept living and dining interior design Damansara landed home — Wuwa Design Studio',
+      'Warm toned living room interior Damansara — turnkey renovation interior design Kuala Lumpur',
+      'Bedroom and kitchen renovation Damansara 3-bedroom landed home — Wuwa Design Studio KL',
+      'Open dry kitchen interior design Damansara landed home — dining chair arrangement by Wuwa Design Studio KL',
+      'Dry kitchen with mixed dining chair designs Damansara 3-bedroom terrace — interior renovation Wuwa Studio',
+      'Contemporary dry kitchen dining area Damansara landed house — eclectic chair selection interior design KL',
+      'Wood and beige two-tone wet kitchen cabinet design Damansara landed home — full renovation Wuwa Studio KL',
+      'Master bedroom with dark dresser and terracotta lounge chair Damansara landed home — interior design by Wuwa Design Studio KL',
+      'Master bedroom warm cove lighting with art print and black dresser Damansara — bedroom renovation Wuwa Studio KL',
+      'Minimalist master bedroom neutral tones floor-to-ceiling curtains Damansara 3-bedroom landed — Wuwa Design Studio KL',
+      'Master bedroom warm ambient lighting terracotta accent chair beige wall texture Damansara — interior design Wuwa KL',
+      'Master bedroom closeup bedside lamp with textured wall Damansara landed home — bedroom interior design Wuwa Studio KL',
+      'Built-in wardrobe with led lighting for 3-bedroom landed house — master bedroom renovation Wuwa Design Studio KL',
+    ],
     location: '3-bedroom landed house, Damansara',
     category: 'Residential',
     coverImage: '/images/thevale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
@@ -66,7 +105,7 @@ export const projects: Project[] = [
       '/images/thevale/Wuwa_The Vale_Deliverables_260423_07679-17.jpg',
 
     ],
-    description: 'A duplex for a couple who collects art. The brief was clear: the space must recede so the art can speak. We designed a restrained backdrop of blackened steel, raw concrete, and aged leather — a living gallery that breathes.',
+    description: '',
     details: {
       scope: 'Concept to completion',
       area: '2,000 sqft',
@@ -75,6 +114,16 @@ export const projects: Project[] = [
     {
     id: 'puchonglegenda',
     title: 'Legenda Residence',
+    altText: [
+      'bedroom curve ceiling design idea Puchong Kuala Lumpur — The Wuwa Design Studio KL',
+      'master bedroom display cabinet idea puchong kuala lumpur — design and built by Wuwa Design Studio KL',
+      'master bedroom bedside mirror pendant light idea landed house puchong — interior design company Wuwa Design Studio',
+      'minimalistic living room marble tv wall — full renovation Wuwa Design Studio',
+      'dry kitchen marble island with storage Puchong Legenda landed house — interior design company KL',
+      'Hotel style living room storage idea with ambient lighting — living room interior design',
+      'Master Bedroom dressing table design dressing table storage idea with full height mirror — dressing table design by Wuwa Design Studio KL',
+      'Handbags display cabinet design 3-storey terrace in Puchong KL — landed house in KL',
+    ],
     location: '5-bedroom landed house, Puchong',
     category: 'Residential',
     coverImage: '/images/legenda/legenda-bedroom2.jpg',
@@ -96,6 +145,12 @@ export const projects: Project[] = [
   {
     id: 'thongbowlioi',
     title: 'Thongbowl',
+    altText: [
+      'Restaurant interior design IOI Damansara beef noodle shop — commercial renovation by Wuwa Design Studio KL',
+      'F&B restaurant interior fit-out Damansara KL — cafe and restaurant design by Wuwa Design Studio',
+      'Modern noodle restaurant interior design Damansara Kuala Lumpur — Wuwa commercial renovation studio',
+      'thongbowl Thongcha ioi damansara beef noodle restaurant Kota Damansara Kuala Lumpur — design by Wuwa Design Studio KL',
+    ],
     location: 'Beef Noodle Restaurant, IOI Damansara',
     category: 'Commercial',
     coverImage: '/images/thongbowlioi/Enscape_2025-06-28-01-48-07.jpg',
@@ -113,6 +168,18 @@ export const projects: Project[] = [
   {
     id: 'gownrentalshop',
     title: 'Tuilerie Gown',
+    altText: [
+      'Bridal gown rental shop interior design Kuala Lumpur — retail space renovation by Wuwa Design Studio',
+      'Luxury retail interior fit-out gown boutique Kuala Lumpur — commercial interior design Wuwa Studio',
+      'Luxurious gown rental boutique renovation — commercial retail design by Wuwa Design Studio KL',
+      'Bridal fitting room design renovation kuala lumpur klang valley — renovated by interior design studio KL',
+      'display shelves design idea design and build renovation company in puchong — interior design studio puchong',
+      'office design office storage shoplot design commercial space — KL office design by Wuwa Design Studio',
+      'Contemporary curve ceiling design idea curve elements — curve feature in ceiling by Wuwa Design Studio KL',
+      'Track light in office commercial space track light — track light interior design Wuwa Design Puchong',
+      'Warm and cozy contemporary interior spaces kuala lumpur malaysia — minimalistic interior design idea in Malaysia',
+      'Wainscoting wall feature design idea kuala lumpur malaysia — wainscoting design by Wuwa Design Studio KL',
+    ],
     location: 'Gown Rental Shop, Kuala Lumpur',
     category: 'Commercial',
     coverImage: '/images/tuilerie/DSC_7379.jpg',
@@ -137,6 +204,20 @@ export const projects: Project[] = [
   {
     id: 'pjnoodleplace',
     title: 'BiangBiang Noodle Bar',
+    altText: [
+      'Noodle bar interior design Cheras Kuala Lumpur — F&B restaurant fit-out by Wuwa Design Studio',
+      'Modern Chinese noodle restaurant renovation Cheras KL — commercial interior design Wuwa Studio',
+      'China inspired noodle restaurant interior design and build — retail renovation by Wuwa Design Studio',
+      'F&B noodle rice restaurant renovation idea in kl — customer dining area Wuwa Design Studio KL',
+      'Red theme F&B design idea modern commercial space — cheras cafe design by Wuwa Design Studio Cheras',
+      'hipster cafe trendy f&b design style feature wall led neon light — cheras kl cafe full renovation by Wuwa Design Studio',
+      'Vibrant commercial space design neon signage commercial signage — commercial interior Wuwa Design Studio KL',
+      'commercial mural art f&b interior space mural art idea — cafe with mural art Wuwa Design Studio',
+      'commercial space floor plan layout design — instagrammable cafe by Wuwa Design Studio',
+      'Restaurant neon feature wall bold branding design industrial design — design and build by Wuwa Design Studio',
+      'Checkerboard Retro design kuala lumpur bangsar south food hall midvalley food — f&b renovation fit out by Wuwa Design Studio',
+      'Shopping mall f&b commercial design eatery dining concept contemporary minimalistic commercial space — design and build renovation by Wuwa Design Studio',
+    ],
     location: 'Noodle Restaurant, Cheras',
     category: 'Commercial',
     coverImage: '/images/biangbiang cheras/DSCF4945.jpg',
@@ -162,6 +243,10 @@ export const projects: Project[] = [
   {
     id: 'officeconcept',
     title: 'Developer Office',
+    altText: [
+      'Corporate office interior design Kajang — event hall and meeting room renovation by Wuwa Design Studio KL',
+      'Modern office and event space interior fit-out Kajang Selangor — commercial renovation Wuwa Studio',
+    ],
     location: 'Event Hall + Meeting Room, Kajang',
     category: 'Commercial',
     coverImage: '/images/fairview/entrance.jpg',
@@ -181,6 +266,12 @@ export const projects: Project[] = [
   {
     id: 'mapleresidence',
     title: 'Maple Residence',
+    altText: [
+      'Dual-key apartment interior design Kuala Lumpur — 4-bedroom renovation by Wuwa Design Studio',
+      'Modern condominium interior design Kuala Lumpur dual-key unit — full turnkey renovation Wuwa Studio',
+      'Minimalistic condominium interior design hidden door living room dry kitchen bar counter island design — buy to rent renovation Wuwa Design Studio',
+      '3-bedroom condo kuala lumpur cyberjaya landed house town house terrace house petaling jaya old klang road — design and build Wuwa Design Studio',
+    ],
     location: '4-bedroom Dual-key, Kuala Lumpur',
     category: 'Residential',
     coverImage: '/images/maple residence/drykitchen2.png',

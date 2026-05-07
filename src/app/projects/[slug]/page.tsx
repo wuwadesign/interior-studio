@@ -15,15 +15,47 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
+function CreativeWorkSchema({ project }: { project: (typeof projects)[0] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": `${project.title} — Interior Design ${project.location}`,
+    "creator": {
+      "@type": "Organization",
+      "name": "Wuwa Design Studio",
+      "url": "https://www.wuwadesignstudio.com"
+    },
+    "description": Array.isArray(project.description)
+      ? project.description.join(' ')
+      : project.description ?? '',
+    "image": `https://www.wuwadesignstudio.com${project.coverImage}`,
+    "url": `https://www.wuwadesignstudio.com/projects/${project.id}`,
+    "locationCreated": {
+      "@type": "Place",
+      "name": `${project.location}, Malaysia`
+    }
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.id === params.slug)
-  if (!project) notFound()
+  if (!project) notFound() 
+    
+
 
   const currentIndex = projects.findIndex((p) => p.id === params.slug)
   const nextProject = projects[(currentIndex + 1) % projects.length]
 
   return (
     <article className="pt-20 md:pt-24">
+      <CreativeWorkSchema project={project!} />
       
 
       {/* Project header */}
@@ -40,6 +72,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <p className="font-outfit text-sm text-muted">
               {project.location}
             </p>
+{project.description && (
+  <div className="mt-4 max-w-xl">
+    {(Array.isArray(project.description)
+      ? project.description
+      : [project.description]
+    ).map((para, i) => (
+      <p key={i} className="font-outfit text-sm md:text-base text-dark/70 leading-relaxed mb-3">
+        {para}
+      </p>
+    ))}
+  </div>
+)}
           </div>
 
           {/* Details sidebar */}
@@ -68,7 +112,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <div key={i}>
                 <Image
   src={img}
-  alt={`${project.title} — view ${i + 1}`}
+  alt={project.altText?.[i] ?? `${project.title} — view ${i + 1}`}
   width={1200}
   height={1600}
   className="w-full h-auto"
