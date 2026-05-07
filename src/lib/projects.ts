@@ -5,6 +5,7 @@ export interface Project {
   category: string
   coverImage: string
   images: string[]
+  altText?: string[]
   description?: string[]
   details: {
     scope: string
@@ -105,7 +106,7 @@ description: [
       '/images/thevale/Wuwa_The Vale_Deliverables_260423_07679-17.jpg',
 
     ],
-    description: '',
+    description: [],
     details: {
       scope: 'Concept to completion',
       area: '2,000 sqft',
