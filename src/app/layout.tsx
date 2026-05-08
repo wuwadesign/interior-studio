@@ -26,7 +26,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: 'Wuwa Design Studio — Interior Design',
-  description: 'We craft interiors that are deeply considered, beautifully restrained, and built to endure.',
+  description: 'We design beautiful homes in Kuala Lumpur, fully managed, from A-Z.',
 }
 
 export default function RootLayout({

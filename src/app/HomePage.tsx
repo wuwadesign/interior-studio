@@ -15,19 +15,63 @@ export default function HomePage() {
     // add more images here
   ]
 
+const carouselAltText = [
+    'Living room interior design The Vale Damansara - Wuwa Design Studio KL',
+    'Dining area renovation The Vale Damansara landed home - Wuwa Design Studio',
+    'Master bedroom interior design The Vale Damansara - Wuwa Design Studio KL',
+    'Modern living room renovation Elmina Green Shah Alam - Wuwa Design Studio',
+    'Open plan living interior design Elmina Green Shah Alam - Wuwa Design Studio',
+  ]
+  
   const heroImages = [
     '/images/thevale/Wuwa_The Vale_Deliverables_260423_07414-7.jpg',
     '/images/thevale/Wuwa_The Vale_Deliverables_260423_07629-15.jpg',
     '/images/elmina green3/LIVING-9.jpg',
   ]// add more hero images here
-   const heroAltText = [
-    'Luxury living room interior design Damansara landed home — Wuwa Design Studio Kuala Lumpur',
-    'Open plan dining and living area renovation Damansara — interior design KL by Wuwa',
-    'Modern landed house living room interior design Shah Alam — Wuwa Design Studio',
+const heroAltText = [
+    'Luxury living room interior design Damansara landed home - Wuwa Design Studio Kuala Lumpur',
+    'Open plan dining and living area renovation Damansara - interior design KL by Wuwa',
+    'Modern landed house living room interior design Shah Alam - Wuwa Design Studio',
   ]
 
   const [current, setCurrent] = useState(0)
   const [heroIndex, setHeroIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+        const faqs = [
+        {
+          q: 'How much does interior design cost?',
+          a: 'Design fees for residential projects typically start from RM5,000 depending on the size and scope of work. Renovation costs are separate and vary by finish level. We will give you a clear, honest estimate in our very first conversation before you commit to anything.',
+        },
+        {
+          q: 'How long does a typical renovation take?',
+          a: 'Most of our residential projects, a standard terrace house for example, takes between 12–20 weeks from design sign-off to handover, depending on scope of work. We\'ll give you a realistic timeline at the start and we will stick to it.',
+        },
+        {
+          q: 'Do I need to manage the contractors myself?',
+          a: 'No. That\'s one of the biggest things we take off your plate. We manage all contractors and site visits throughout the build. You get regular updates without having to chase anyone.',
+        },
+        {
+          q: 'How accurate are your 3D designs?',
+          a: 'Our visuals are created with real-world execution in mind. What you see is designed to be achievable — not just for presentation, but for actual build.',
+        },
+        {
+          q: 'What if I don\'t like the initial design concept?',
+          a: 'We revise the concept until you are happy — at no extra cost. You will never be pressured to approve something you are unsure about.',
+        },
+        {
+          q: 'Do you only work in Puchong?',
+          a: 'We are based in Puchong but we take on interior design and renovation projects across Klang Valley and beyond, residential and commercial. Drop us a message and we\'ll let you know if we can serve your area.',
+        },
+        {
+          q: 'Do you provide 3D design before renovation starts?',
+          a: 'Yes — every project begins with a full 3D concept so you can visualise your home before a single wall is touched. We design across all major areas in Klang Valley including Puchong, Shah Alam, Damansara, Cheras and Sri Damansara.',
+        },
+        {
+          q: 'Do you provide 3D drawings before renovation starts?',
+          a: 'Yes — every project begins with a full 3D drawings so you can visualise your home before a single wall is touched.',
+        }
+      ]
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -158,7 +202,7 @@ export default function HomePage() {
             >
               <Image
                 src={img}
-                alt={`Featured work ${i + 1}`}
+                alt={carouselAltText[i] ?? `Interior design project ${i + 1} — Wuwa Design Studio KL`}
                 fill
                 className="object-cover"
               />
@@ -266,7 +310,7 @@ export default function HomePage() {
           project: 'Condominium, Sri Damansara',
         },
         {
-          quote: 'They finished on schedule and within budget. I didn\'t have to chase them for dateline, it\s my first time renovating, I was quite worried in the beginning but seeing how they supervised the site, I was less worried.',
+          quote: 'They finished on schedule and within budget. I didn\'t have to chase them for dateline, it&apos;s my first time renovating, I was quite worried in the beginning but seeing how they supervised the site, I was less worried.',
           name: 'Michelle T.',
           project: 'Landed home, Puchong',
         },
@@ -329,64 +373,28 @@ export default function HomePage() {
       Frequently asked questions
     </p>
 
-    <div className="flex flex-col divide-y divide-dark/10">
-      {[
-        {
-          q: 'How much does interior design cost?',
-          a: 'Design fees for residential projects typically start from RM5,000 depending on the size and scope of work. Renovation costs are separate and vary by finish level. We will give you a clear, honest estimate in our very first conversation before you commit to anything.',
-        },
-        {
-          q: 'How long does a typical renovation take?',
-          a: 'Most of our residential projects, a standard terrace house for example, takes between 12–20 weeks from design sign-off to handover, depending on scope of work. We’ll give you a realistic timeline at the start and we will stick to it.',
-        },
-        {
-          q: 'Do I need to manage the contractors myself?',
-          a: 'No. That’s one of the biggest things we take off your plate. We manage all contractors and site visits throughout the build. You get regular updates without having to chase anyone.',
-        },
-        {
-          q: 'How accurate are your 3D designs?',
-          a: 'Our visuals are created with real-world execution in mind. What you see is designed to be achievable — not just for presentation, but for actual build.',
-        },
-        {
-          q: 'What if I don’t like the initial design concept?',
-          a: 'We revise the concept until you are happy — at no extra cost. You will never be pressured to approve something you are unsure about.',
-        },
-        {
-          q: 'Do you only work in Puchong?',
-          a: 'We are based in Puchong but we take on interior design and renovation projects across Klang Valley and beyond, residential and commercial. Drop us a message and we’ll let you know if we can serve your area.',
-        },
-      ].map((item, index) => {
-        const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-        const isOpen = openIndex === index
-
-        return (
-          <div key={item.q} className="py-6">
-            <button
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-              className="w-full flex justify-between items-center text-left"
-            >
-              <h3 className="font-display text-xl font-light italic text-dark">
-                {item.q}
-              </h3>
-              <span className="text-dark text-xl">
-                {isOpen ? '−' : '+'}
-              </span>
-            </button>
-
-            <div
-              className={`overflow-hidden transition-all duration-300 ${
-                isOpen ? 'max-h-40 mt-4' : 'max-h-0'
-              }`}
-            >
-              <p className="font-body text-sm text-muted leading-relaxed">
-                {item.a}
-              </p>
-            </div>
-          </div>
-        )
-      })}
-    </div>
+        <div className="flex flex-col divide-y divide-dark/10">
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index
+            return (
+              <div key={item.q} className="py-6">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex justify-between items-center text-left"
+                >
+                  <h3 className="font-display text-xl font-light italic text-dark">
+                    {item.q}
+                  </h3>
+                  <span className="text-dark text-xl">{isOpen ? '−' : '+'}</span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-40 mt-4' : 'max-h-0'}`}>
+                  <p className="font-body text-sm text-muted leading-relaxed">{item.a}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
   </div>
 </section>
 

@@ -4,7 +4,7 @@ import { projects } from '@/lib/projects'
 
 export const metadata = {
   title: 'Projects — Wuwa Design Studio',
-  description: 'Selected interior design projects across Malaysia and Southeast Asia.',
+  description: 'Interior design and renovation projects across Klang Valley  — Shah Alam, Damansara, Petaling Jaya, Subang, Mont Kiara, Hartamas, Kepong, Old Klang Road, Oug, Puchong, Sri Damansara and Kuala Lumpur. Residential homes, commercial spaces, office and F&B restaurants by Wuwa Design Studio.',
 }
 
 export default function ProjectsPage() {
