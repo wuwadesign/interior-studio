@@ -73,6 +73,14 @@ export default function Footer() {
               >
                 Rednote
               </a>
+              <a
+              href="https://www.facebook.com/profile.php?id=100084153769952"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-xs tracking-widest uppercase text-stone hover:text-cream transition-colors duration-300"
+              >
+                Facebook
+              </a>
             </div>
           </div>
         </div>
